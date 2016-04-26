@@ -1,0 +1,6 @@
+<package>
+  <description brief="basketball_description">basketball_description</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>

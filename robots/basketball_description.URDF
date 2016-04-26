@@ -1,0 +1,101 @@
+<robot
+  name="basketball_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000556125466968315 0.0167644917358465 0.0131913972683409"
+        rpy="0 0 1.57" />
+      <mass
+        value="7.8087992128031" />
+      <inertia
+        ixx="0.216967868974315"
+        ixy="8.11773602623218E-05"
+        ixz="0.000869178911904359"
+        iyy="0.193508557715986"
+        iyz="0.0362506489850534"
+        izz="0.221222216855788" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57" />
+      <geometry>
+        <mesh
+          filename="package://basketball_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 1.57" />
+      <geometry>
+        <mesh
+          filename="package://basketball_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fork_Link">
+    <inertial>
+      <origin
+        xyz="-0.156466944929557 -0.190248664063083 1.47764992754022E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.247877315447271" />
+      <inertia
+        ixx="0.00892421052874977"
+        ixy="0.00214926699541557"
+        ixz="5.8557101423315E-07"
+        iyy="0.00415519046008872"
+        iyz="6.97005625566748E-07"
+        izz="0.00788503535970649" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basketball_description/meshes/fork_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://basketball_description/meshes/fork_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fork_base_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0095392 0.31206"
+      rpy="-1.5708 -0.010831 -0.0008" />
+    <parent
+      link="base_link" />
+    <child
+      link="fork_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
